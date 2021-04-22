@@ -26,5 +26,5 @@
 
 　　若是傳遞某個 object 給 method 時，objects 是以 call by reference 方式來傳遞。
   
-  
+  因為Java並沒有提供直接存取記憶體的運算子，因此，並沒有辦法做到值改變的時後，原參數也會變動。→這種屬於Call by Reference
   
