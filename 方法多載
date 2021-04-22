@@ -1,0 +1,30 @@
+多載(Overload)指在一個類別(class)中，定義多個名稱相同，但參數(Parameter)不同的方法(Method)。
+
+
+例如Java String的indexOf(...)即為多載的例子。
+
+以indexOf為名稱的方法分別為:
+
+public int indexOf(int ch)
+public int indexOf(int ch, int fromIndex)
+public int indexOf(String str)
+public int indexOf(String str, int fromIndex)
+所以只要方法的參數型態或數目不同，則允許多個相同名稱的方法存在。但要注意多載並不包含回傳型態不同，也就是如果方法的名稱相同，參數型態及數目相同，而只有回傳型態不同，仍有命名衝突的錯誤。例如下面範例的public String hello()即與public void hello()發生命名衝突。
+
+public interface HelloWorld {
+
+    void hello(); // 與最下面的 String hello() 衝突
+
+    void hello(int i);
+
+    void hello(int i, int j) ;
+
+    void hello(int i, String s);
+
+    void hello(String s) ;
+
+    String hello();  // 回傳型態不同並無多載，與最上面的 void hello() 衝突
+
+}
+
+而多載(Overload)最常和覆寫(Override)或多型(Polymorphism)一起考，因為多載和覆寫的英文很相近，而多載和多型的中文很相近，非常容易搞混。
