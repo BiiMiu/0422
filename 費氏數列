@@ -20,3 +20,33 @@ public class test {
 --------------------Configuration: --------------------
 請輸入費氏數列項數n：46
 費氏數列第46項數的值為1836311903
+
+
+
+遞迴函數 遞迴函數
+public static int fibonacci(final int n) {
+    switch (n) {
+        case 0:
+            return 0;
+        case 1:
+            return 1;
+        default:
+            return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+
+迭代版本 迭代版本
+public static int fibonacci(final int n) {
+    int init = 0;
+    int accumulator = 1;
+ 
+    for (int counter = 0; counter < n; ++counter) {
+        final int temp = accumulator;
+        accumulator += init;
+ 
+        init = temp;
+    }
+ 
+    return init;
+}
