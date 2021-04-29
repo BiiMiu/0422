@@ -3,7 +3,7 @@ public class test {
 
     public static void main(String args[]) {
      	int num ;
-     	System.out.print("請輸入費氏數列項數m：");
+     	System.out.print("請輸入費氏數列項數n：");
      	num = scanner.nextInt();
      	System.out.println("費氏數列第"+num+"項數的值為"+fib(num));
     }
