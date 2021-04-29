@@ -1,22 +1,13 @@
 import java.io.*;
 public class test {
 
-    public static void main(String args[])throws IOException {
-     	BufferedReader buf=new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String args[]) {
+     	int num ;
      	System.out.print("請輸入費氏數列項數m：");
-     	int m=Integer.parseInt(buf.readLine());
-     	System.out.println("費氏數列第"+m+"項數的值為"+fib(m));
+     	num = scanner.nextInt();
+     	System.out.println("費氏數列第"+num+"項數的值為"+fib(num));
     }
     
-    public static long fib(int n){
-        if(n==1)
-		return 1;
-	else if (n==2)
-		return 1;
-	else
-		return fib(n-1)+fib(n-2); 
-    }   
-}
 --------------------Configuration: --------------------
 請輸入費氏數列項數n：46
 費氏數列第46項數的值為1836311903
@@ -24,28 +15,28 @@ public class test {
 
 
 遞迴函數 遞迴函數
-public static int fibonacci(final int n) {
-    switch (n) {
+public static int fib(int n) {
+    switch (n) 
         case 0:
             return 0;
         case 1:
             return 1;
         default:
-            return fibonacci(n - 1) + fibonacci(n - 2);
+            return fib(n - 1) + fib(n - 2);
     }
 }
 
 
 迭代版本 迭代版本
-public static int fibonacci(final int n) {
+public static int fib(int n) {
     int init = 0;
     int accumulator = 1;
  
-    for (int counter = 0; counter < n; ++counter) {
-        final int temp = accumulator;
+    for (int t = 0; t < n; ++t) {
+        n = accumulator;
         accumulator += init;
  
-        init = temp;
+        init = n;
     }
  
     return init;
